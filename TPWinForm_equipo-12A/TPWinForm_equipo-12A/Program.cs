@@ -11,6 +11,7 @@ namespace TPWinForm_equipo_12A
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// prueda git walter
         [STAThread]
         static void Main()
         {
