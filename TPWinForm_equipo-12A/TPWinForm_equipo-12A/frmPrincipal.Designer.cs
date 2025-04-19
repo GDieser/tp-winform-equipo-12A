@@ -58,6 +58,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscarMarca = new System.Windows.Forms.Button();
+            this.btnVerDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -96,10 +97,10 @@
             // 
             // btnImagenPrevia
             // 
-            this.btnImagenPrevia.Location = new System.Drawing.Point(418, 291);
+            this.btnImagenPrevia.Location = new System.Drawing.Point(418, 278);
             this.btnImagenPrevia.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnImagenPrevia.Name = "btnImagenPrevia";
-            this.btnImagenPrevia.Size = new System.Drawing.Size(79, 34);
+            this.btnImagenPrevia.Size = new System.Drawing.Size(79, 23);
             this.btnImagenPrevia.TabIndex = 2;
             this.btnImagenPrevia.Text = "Anterior";
             this.btnImagenPrevia.UseVisualStyleBackColor = true;
@@ -107,10 +108,10 @@
             // 
             // btnImagenSiguiente
             // 
-            this.btnImagenSiguiente.Location = new System.Drawing.Point(575, 291);
+            this.btnImagenSiguiente.Location = new System.Drawing.Point(575, 279);
             this.btnImagenSiguiente.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnImagenSiguiente.Name = "btnImagenSiguiente";
-            this.btnImagenSiguiente.Size = new System.Drawing.Size(79, 34);
+            this.btnImagenSiguiente.Size = new System.Drawing.Size(79, 22);
             this.btnImagenSiguiente.TabIndex = 3;
             this.btnImagenSiguiente.Text = "Siguiente";
             this.btnImagenSiguiente.UseVisualStyleBackColor = true;
@@ -142,13 +143,13 @@
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(129, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             // 
             // detalleTS
             // 
             this.detalleTS.Name = "detalleTS";
-            this.detalleTS.Size = new System.Drawing.Size(129, 22);
+            this.detalleTS.Size = new System.Drawing.Size(180, 22);
             this.detalleTS.Text = "Ver Detalle";
             this.detalleTS.Click += new System.EventHandler(this.detalleTS_Click);
             // 
@@ -243,7 +244,7 @@
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(11, 372);
+            this.lblBuscar.Location = new System.Drawing.Point(9, 404);
             this.lblBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(43, 13);
@@ -252,16 +253,16 @@
             // 
             // txtBoxBuscar
             // 
-            this.txtBoxBuscar.Location = new System.Drawing.Point(57, 370);
+            this.txtBoxBuscar.Location = new System.Drawing.Point(55, 402);
             this.txtBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtBoxBuscar.Name = "txtBoxBuscar";
-            this.txtBoxBuscar.Size = new System.Drawing.Size(229, 20);
+            this.txtBoxBuscar.Size = new System.Drawing.Size(234, 20);
             this.txtBoxBuscar.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 402);
+            this.label1.Location = new System.Drawing.Point(11, 363);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
@@ -271,7 +272,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(155, 402);
+            this.label2.Location = new System.Drawing.Point(150, 363);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
@@ -282,25 +283,25 @@
             // 
             this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(57, 402);
+            this.comboMarca.Location = new System.Drawing.Point(55, 360);
             this.comboMarca.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.comboMarca.Name = "comboMarca";
-            this.comboMarca.Size = new System.Drawing.Size(82, 21);
+            this.comboMarca.Size = new System.Drawing.Size(91, 21);
             this.comboMarca.TabIndex = 11;
             // 
             // comboCat
             // 
             this.comboCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCat.FormattingEnabled = true;
-            this.comboCat.Location = new System.Drawing.Point(204, 402);
+            this.comboCat.Location = new System.Drawing.Point(192, 360);
             this.comboCat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.comboCat.Name = "comboCat";
-            this.comboCat.Size = new System.Drawing.Size(82, 21);
+            this.comboCat.Size = new System.Drawing.Size(97, 21);
             this.comboCat.TabIndex = 12;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(575, 360);
+            this.btnModificar.Location = new System.Drawing.Point(575, 321);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(79, 27);
@@ -311,7 +312,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(575, 402);
+            this.btnEliminar.Location = new System.Drawing.Point(575, 366);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(79, 27);
@@ -322,7 +323,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(418, 360);
+            this.btnAgregar.Location = new System.Drawing.Point(418, 321);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(79, 27);
@@ -333,7 +334,7 @@
             // 
             // btnBuscarMarca
             // 
-            this.btnBuscarMarca.Location = new System.Drawing.Point(310, 402);
+            this.btnBuscarMarca.Location = new System.Drawing.Point(293, 359);
             this.btnBuscarMarca.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnBuscarMarca.Name = "btnBuscarMarca";
             this.btnBuscarMarca.Size = new System.Drawing.Size(79, 21);
@@ -342,11 +343,23 @@
             this.btnBuscarMarca.UseVisualStyleBackColor = true;
             this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click);
             // 
+            // btnVerDetalles
+            // 
+            this.btnVerDetalles.Location = new System.Drawing.Point(418, 363);
+            this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnVerDetalles.Name = "btnVerDetalles";
+            this.btnVerDetalles.Size = new System.Drawing.Size(79, 27);
+            this.btnVerDetalles.TabIndex = 18;
+            this.btnVerDetalles.Text = "Ver Detalles";
+            this.btnVerDetalles.UseVisualStyleBackColor = true;
+            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 467);
+            this.Controls.Add(this.btnVerDetalles);
             this.Controls.Add(this.btnBuscarMarca);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEliminar);
@@ -410,5 +423,6 @@
         private System.Windows.Forms.ToolStripMenuItem detalleTS;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscarMarca;
+        private System.Windows.Forms.Button btnVerDetalles;
     }
 }

@@ -43,22 +43,24 @@
             this.dgvImagenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvImagenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImagenes.Location = new System.Drawing.Point(27, 38);
+            this.dgvImagenes.Location = new System.Drawing.Point(18, 25);
+            this.dgvImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvImagenes.MultiSelect = false;
             this.dgvImagenes.Name = "dgvImagenes";
             this.dgvImagenes.ReadOnly = true;
             this.dgvImagenes.RowHeadersWidth = 62;
             this.dgvImagenes.RowTemplate.Height = 28;
             this.dgvImagenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImagenes.Size = new System.Drawing.Size(286, 357);
+            this.dgvImagenes.Size = new System.Drawing.Size(191, 232);
             this.dgvImagenes.TabIndex = 0;
             this.dgvImagenes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImagenes_CellContentClick);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(346, 38);
+            this.btnAgregar.Location = new System.Drawing.Point(231, 25);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(129, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(86, 31);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -66,9 +68,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(346, 105);
+            this.btnEliminar.Location = new System.Drawing.Point(231, 68);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(129, 47);
+            this.btnEliminar.Size = new System.Drawing.Size(86, 31);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -76,9 +79,10 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(346, 175);
+            this.btnActualizar.Location = new System.Drawing.Point(231, 114);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(129, 47);
+            this.btnActualizar.Size = new System.Drawing.Size(86, 31);
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -86,32 +90,38 @@
             // 
             // pbImagenes
             // 
-            this.pbImagenes.Location = new System.Drawing.Point(346, 243);
+            this.pbImagenes.Location = new System.Drawing.Point(231, 158);
+            this.pbImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagenes.Name = "pbImagenes";
-            this.pbImagenes.Size = new System.Drawing.Size(129, 152);
+            this.pbImagenes.Size = new System.Drawing.Size(86, 99);
             this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagenes.TabIndex = 4;
             this.pbImagenes.TabStop = false;
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(27, 401);
+            this.txtUrl.Location = new System.Drawing.Point(18, 261);
+            this.txtUrl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(286, 26);
+            this.txtUrl.Size = new System.Drawing.Size(192, 20);
             this.txtUrl.TabIndex = 5;
             // 
             // frmImagenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 449);
+            this.ClientSize = new System.Drawing.Size(340, 292);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.pbImagenes);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvImagenes);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmImagenes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Listado Imagenes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvImagenes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).EndInit();

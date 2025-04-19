@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Dominio;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Servicio
 {
@@ -90,11 +91,23 @@ namespace Servicio
 
             try
             {
-                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) values ('" + nuevoArt.Codigo + "', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion + "',  " + nuevoArt.Precio + ", @IdMarca, @IdCategoria) ");
-                datos.setearParametro("@IdMarca", nuevoArt.Marca.IdMarca);
+                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) values ('" + nuevoArt.Codigo + "', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion + "',  " + nuevoArt.Precio + ", @IdMarca, @IdCategoria); SELECT SCOPE_IDENTITY()");
+                datos.setParametro("@IdMarca", nuevoArt.Marca.IdMarca);
                 datos.setParametro("@IdCategoria", nuevoArt.Categoria.IdCategoria);
 
+                datos.ejecutarLectura();
+
+                if(datos.Lector.Read())
+                    nuevoArt.IdArticulo = Convert.ToInt32(datos.Lector[0]);
+
+                datos.cerrarConexion();
+
+                string consultaImagen = "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@idArticulo, @imagenUrl)";
+                datos.setConsulta(consultaImagen);
+                datos.setParametro("@idArticulo", nuevoArt.IdArticulo);
+                datos.setParametro("@imagenUrl", nuevoArt.UrlImagen);
                 datos.ejecutarAccion();
+
             }
             catch (Exception ex)
             {

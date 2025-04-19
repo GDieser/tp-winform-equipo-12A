@@ -234,5 +234,10 @@ namespace TPWinForm_equipo_12A
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnVerDetalles_Click(object sender, EventArgs e)
+        {
+            abrirFormularioDetalle();
+        }
     }
 }
