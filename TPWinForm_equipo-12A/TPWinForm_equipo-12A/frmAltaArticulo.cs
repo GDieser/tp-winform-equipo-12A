@@ -14,9 +14,18 @@ namespace TPWinForm_equipo_12A
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
+        }
+
+        public frmAltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificar Articulo";
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,17 +35,31 @@ namespace TPWinForm_equipo_12A
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo nuevoArt   = new Articulo();
+            //Articulo nuevoArt   = new Articulo();
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                nuevoArt.Codigo = txtCodigo.Text;
-                nuevoArt.Nombre = txtNombre.Text;
-                nuevoArt.Descripcion = txtDescripcion.Text;
-                nuevoArt.Precio = decimal.Parse(txtPrecio.Text);
+                if(articulo == null)
+                    articulo = new Articulo();
 
-                negocio.agregar(nuevoArt);
-                MessageBox.Show("Agregado Exitosamente");
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+
+                //Aca deberiamos agregar imagen y consultar si es modificacion
+
+                if(articulo.IdArticulo != 0)
+                {
+                    negocio.modificarArticulo(articulo);
+                    MessageBox.Show("Articulo modificado.");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado Exitosamente");
+                }                
                 Close();
 
             }
@@ -45,6 +68,49 @@ namespace TPWinForm_equipo_12A
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void frmAltaArticulo_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marca = new MarcaNegocio();
+            CategoriaNegocio categoria = new CategoriaNegocio();
+
+            try
+            {
+                //Acá los deplegables
+                
+
+                if(articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtPrecio.Text = articulo.Precio.ToString();
+
+                    //Aca deberian ir cat, marca y url
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                //Para el pb de imagenes
+            }
+            catch (Exception ex)
+            {
+                //Carga por defecto
+                //"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDSS5FeaLtelZwa1H2RbgdzrnuUt_oJEP0XA&s"
+            }
+
         }
     }
 }
