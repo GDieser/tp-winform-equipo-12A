@@ -77,7 +77,7 @@ namespace TPWinForm_equipo_12A
             {
                 pbImagenes.Image = null;
             }
-            MessageBox.Show($"Imagen actual: {imagenActual}\nTotal imágenes: {articuloSeleccionado.Imagenes.Count}\nURL: {articuloSeleccionado.Imagenes[imagenActual].ImagenUrl}");
+            //MessageBox.Show($"Imagen actual: {imagenActual}\nTotal imágenes: {articuloSeleccionado.Imagenes.Count}\nURL: {articuloSeleccionado.Imagenes[imagenActual].ImagenUrl}");
 
         }
 

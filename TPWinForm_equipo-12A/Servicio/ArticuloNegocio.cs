@@ -43,8 +43,10 @@ namespace Servicio
                     }
                     else
                     {
-                        art.Marca.IdMarca = 0;
-                        art.Marca.Descripcion = "Sin categoria";
+                        //art.Marca.IdMarca = 0;
+                        //art.Marca.Descripcion = "Sin categoria";
+                        art.Categoria.IdCategoria = 0;
+                        art.Categoria.Descripcion = "Sin categoría";
                     }
 
                     art.Marca = new Marca();
