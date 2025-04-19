@@ -142,7 +142,8 @@ namespace TPWinForm_equipo_12A
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();
-            alta.ShowDialog();  
+            alta.ShowDialog();
+            cargarArticulos();
         }
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -160,5 +161,14 @@ namespace TPWinForm_equipo_12A
             }
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            modificar.ShowDialog();
+            cargarArticulos();
+        }
     }
 }

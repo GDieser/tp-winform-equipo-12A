@@ -84,13 +84,13 @@ namespace Servicio
                 datos.cerrarConexion();
             }
         }
-            public void agregar(Articulo nuevoArt)
-            {
+        public void agregar(Articulo nuevoArt)
+        {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values ('"+ nuevoArt.Codigo +"', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion +"',  " + nuevoArt.Precio + ") ");
+                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values ('" + nuevoArt.Codigo + "', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion + "',  " + nuevoArt.Precio + ") ");
 
                 datos.ejecutarAccion();
             }
@@ -99,10 +99,42 @@ namespace Servicio
 
                 throw ex;
             }
-            finally 
-            { 
+            finally
+            {
                 datos.cerrarConexion();
             }
         }
+
+        public void modificarArticulo(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            //string consulta = "UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, Precio = @precio WHERE Id = @id";
+            string consulta = "UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, Precio = @precio WHERE Id = @id";
+
+            try
+            {
+                datos.setConsulta(consulta);
+                datos.setParametro("@codigo", articulo.Codigo);
+                datos.setParametro("@nombre", articulo.Nombre);
+                datos.setParametro("@descripcion", articulo.Descripcion);
+                //datos.setParametro("@idMarca", articulo.Marca.IdMarca);
+                //datos.setParametro("@idCategoria", articulo.Categoria.IdCategoria);
+                datos.setParametro("@precio", articulo.Precio);
+                datos.setParametro("@id", articulo.IdArticulo);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
