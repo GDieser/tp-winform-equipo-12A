@@ -170,5 +170,31 @@ namespace TPWinForm_equipo_12A
             modificar.ShowDialog();
             cargarArticulos();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            try
+            {
+                DialogResult respuesata = MessageBox.Show("¿Confirmar acción?", "Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesata == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                    negocio.eliminarArticulo(seleccionado.IdArticulo);
+
+                    MessageBox.Show("Eliminación exitosa");
+                    cargarArticulos();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

@@ -138,7 +138,7 @@
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             // 
             // categoriasToolStripMenuItem
@@ -154,7 +154,7 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             // 
             // modificarToolStripMenuItem
@@ -162,7 +162,7 @@
             this.modificarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acaLaListaToolStripMenuItem});
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             // 
             // acaLaListaToolStripMenuItem
@@ -176,7 +176,7 @@
             this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acaLaListaToolStripMenuItem1});
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // acaLaListaToolStripMenuItem1
@@ -198,7 +198,7 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             // 
             // modificarToolStripMenuItem1
@@ -206,7 +206,7 @@
             this.modificarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acaLaListaToolStripMenuItem2});
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
             // acaLaListaToolStripMenuItem2
@@ -220,7 +220,7 @@
             this.eliminarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acaLaListaDeMarcasToolStripMenuItem});
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // acaLaListaDeMarcasToolStripMenuItem
@@ -316,6 +316,7 @@
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmPrincipal
             // 

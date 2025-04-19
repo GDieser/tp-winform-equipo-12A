@@ -136,5 +136,33 @@ namespace Servicio
             }
         }
 
+        public void eliminarArticulo(int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "DELETE FROM ARTICULOS WHERE Id = @id";
+            //string eliminarImg = "DELETE FROM IMAGENES WHERE IdArticulo = @idArticulo";
+            try
+            {
+                //datos.setConsulta(eliminarImg);
+                //datos.setParametro("@idArticulo", idArticulo);
+                //datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+                datos.setConsulta(consulta);
+                datos.setParametro("@id", idArticulo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
