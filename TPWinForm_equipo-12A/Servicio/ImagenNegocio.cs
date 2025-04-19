@@ -8,7 +8,7 @@ using Dominio;
 
 namespace Servicio
 {
-    internal class ImagenNegocio
+    public class ImagenNegocio
 
 
     {
@@ -45,6 +45,69 @@ namespace Servicio
             }
 
         }
+
+        public void agregarImagen(Imagen img)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("INSERT INTO imagenes (idArticulo, imagenURL) VALUES (@idArticulo, @imagenURL)");
+                datos.limpiarParametros();
+                datos.setParametro("@idArticulo", img.IdArticulo);
+                datos.setParametro("@imagenURL", img.ImagenUrl);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void borrarImagen(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("DELETE FROM imagenes WHERE id = @id");
+                datos.limpiarParametros();
+                datos.setParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void editarImagen(Imagen img)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("UPDATE imagenes SET imagenURL = @imagenURL WHERE id = @id");
+                datos.limpiarParametros();
+                datos.setParametro("@imagenURL", img.ImagenUrl);
+                datos.setParametro("@id", img.IdImagen);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
     }
 }

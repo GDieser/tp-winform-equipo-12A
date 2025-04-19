@@ -17,7 +17,6 @@ namespace TPWinForm_equipo_12A
         {
             InitializeComponent();
             cargarArticulos();
-            dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
             cargarMarcas();
             cargarCategorias();
         }
@@ -37,23 +36,6 @@ namespace TPWinForm_equipo_12A
             dgvArticulos.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgvArticulos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dgvArticulos.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            if (dgvArticulos.Rows.Count > 0)
-            {
-                dgvArticulos.Rows[0].Selected = true; // seleccionar la primera fila
-                dgvArticulos_SelectionChanged(null, null); // simular cambio de selección
-            }
-        }
-
-        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        {
-            imagenActual = 0;
-            if (dgvArticulos.CurrentRow != null)
-            {
-                articuloSeleccionado = dgvArticulos.CurrentRow.DataBoundItem as Articulo;
-                mostrarImagen();
-                actualizarBotonesNavegacion();
-            }
 
         }
 
@@ -139,25 +121,13 @@ namespace TPWinForm_equipo_12A
             btnImagenSiguiente.BackColor = habilitar ? SystemColors.Control : SystemColors.ControlLight;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-          /*  frmAltaArticulo alta = new frmAltaArticulo();
-            alta.ShowDialog();
-            cargarArticulos();*/
-        }
-
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 Articulo articulo = dgvArticulos.Rows[e.RowIndex].DataBoundItem as Articulo;
-                
 
-                if (articulo != null)
-                {
-                    var frmDetArt = new frmDetalleArticulo(articulo);
-                    frmDetArt.ShowDialog();
-                }
+                abrirFormularioDetalle();
             }
         }
 
@@ -202,6 +172,32 @@ namespace TPWinForm_equipo_12A
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
             cargarArticulos();
+        }
+
+        private void abrirFormularioDetalle()
+        {
+            if (articuloSeleccionado != null) 
+            { 
+                frmDetalleArticulo modificar = new frmDetalleArticulo(articuloSeleccionado);
+                modificar.ShowDialog();
+///                cargarArticulos();
+            }
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                imagenActual = 0; // reinicia el contador de imágenes
+                mostrarImagen();
+                actualizarBotonesNavegacion();
+            }
+        }
+
+        private void detalleTS_Click(object sender, EventArgs e)
+        {
+            abrirFormularioDetalle();
         }
     }
 }

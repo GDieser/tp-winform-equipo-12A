@@ -28,6 +28,7 @@ namespace TPWinForm_equipo_12A
             cargaInicial();
             mostrarImagen();
             cambiarEstado();
+            btnEditar.Enabled = true;
             if (art.Imagenes.Count > 1)
             {
                 btnImagPrevia.Visible = true;
@@ -57,9 +58,11 @@ namespace TPWinForm_equipo_12A
             tbDescripcion.ReadOnly = !tbDescripcion.ReadOnly;
             tbCodigo.ReadOnly = !tbCodigo.ReadOnly;
             tbPrecio.ReadOnly = !tbPrecio.ReadOnly;
+            btnEditar.Enabled = !btnEditar.Enabled;
 
             cbMarca.Enabled = !cbMarca.Enabled;
             cbCategoria.Enabled = !cbCategoria.Enabled;
+            btnCancelar.Enabled = !btnCancelar.Enabled;
         }
 
         private void cargarMarcas()
@@ -144,6 +147,12 @@ namespace TPWinForm_equipo_12A
         {
             cambiarEstado();
             cargaInicial();
+        }
+
+        private void btnImagenes_Click(object sender, EventArgs e)
+        {
+            frmImagenes frmImagenes = new frmImagenes(art.IdArticulo);
+            frmImagenes.ShowDialog();
         }
     }
 
