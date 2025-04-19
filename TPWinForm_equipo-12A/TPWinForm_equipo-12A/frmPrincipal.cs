@@ -142,5 +142,11 @@ namespace TPWinForm_equipo_12A
             btnImagenPrevia.BackColor = habilitar ? SystemColors.Control : SystemColors.ControlLight;
             btnImagenSiguiente.BackColor = habilitar ? SystemColors.Control : SystemColors.ControlLight;
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();  
+        }
     }
 }

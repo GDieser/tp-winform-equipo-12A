@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -62,17 +63,17 @@ namespace Servicio
                     }
 
                     art.Imagenes = im.getImagenesIdArticulo(art.IdArticulo);
-                  
-                        
-                        articulos.Add(art);
-                    }
-                    
-                    
 
-                    return articulos;
 
-                    
-                 
+                    articulos.Add(art);
+                }
+
+
+
+                return articulos;
+
+
+
             }
             catch (Exception ex)
             {
@@ -80,6 +81,26 @@ namespace Servicio
             }
             finally
             {
+                datos.cerrarConexion();
+            }
+        }
+            public void agregar(Articulo nuevoArt)
+            {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values ('"+ nuevoArt.Codigo +"', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion +"',  " + nuevoArt.Precio + ") ");
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            { 
                 datos.cerrarConexion();
             }
         }
