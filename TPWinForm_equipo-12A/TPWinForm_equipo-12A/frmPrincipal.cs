@@ -70,15 +70,13 @@ namespace TPWinForm_equipo_12A
                 }
                 catch
                 {
-                    pbImagenes.Image = null;
+                    pbImagenes.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDSS5FeaLtelZwa1H2RbgdzrnuUt_oJEP0XA&s");
                 }
             }
             else
             {
-                pbImagenes.Image = null;
+                pbImagenes.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDSS5FeaLtelZwa1H2RbgdzrnuUt_oJEP0XA&s");
             }
-            //MessageBox.Show($"Imagen actual: {imagenActual}\nTotal imágenes: {articuloSeleccionado.Imagenes.Count}\nURL: {articuloSeleccionado.Imagenes[imagenActual].ImagenUrl}");
-
         }
 
         private void btnImagenPrevia_Click(object sender, EventArgs e)
@@ -111,7 +109,6 @@ namespace TPWinForm_equipo_12A
             MarcaNegocio neg = new MarcaNegocio();
             List<Marca> marcas = neg.listar();
 
-            // Agregar opción "Todos"
             Marca opcionTodos = new Marca { IdMarca = 0, Descripcion = "Todas" };
             marcas.Insert(0, opcionTodos);
 
@@ -124,7 +121,6 @@ namespace TPWinForm_equipo_12A
             CategoriaNegocio cat = new CategoriaNegocio();
             List<Categoria> categorias = cat.listar();
 
-            // Agregar opción "Todos"
             Categoria opcionTodos = new Categoria { IdCategoria = 0, Descripcion = "Todas" };
             categorias.Insert(0, opcionTodos);
 
@@ -148,5 +144,21 @@ namespace TPWinForm_equipo_12A
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();  
         }
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Articulo articulo = dgvArticulos.Rows[e.RowIndex].DataBoundItem as Articulo;
+                
+
+                if (articulo != null)
+                {
+                    var frmDetArt = new frmDetalleArticulo(articulo);
+                    frmDetArt.ShowDialog();
+                }
+            }
+        }
+
     }
 }
