@@ -199,5 +199,40 @@ namespace TPWinForm_equipo_12A
         {
             abrirFormularioDetalle();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
+            cargarArticulos();
+        }
+
+        private void btnBuscarMarca_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                //Validar
+                int marca = ((Marca)comboMarca.SelectedItem).IdMarca;
+                int categoria = ((Categoria)comboCat.SelectedItem).IdCategoria;
+
+                if (marca != 0 || categoria != 0)
+                {
+                    dgvArticulos.DataSource = negocio.filtrarMarca(marca, categoria);
+                }
+                else
+                {
+                    cargarArticulos();
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

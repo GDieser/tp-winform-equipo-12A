@@ -166,5 +166,69 @@ namespace Servicio
             }
         }
 
+        public List<Articulo> filtrarMarca(int marca, int categoria)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            ImagenNegocio imagen = new ImagenNegocio();
+
+            string consulta;
+            try
+            {
+                if(marca != 0 && categoria == 0)
+                {
+                    consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.Precio, M.Descripcion Marca, C.Descripcion Categoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria WHERE IdMarca = "+marca+"";
+                }
+                else if (marca != 0 && categoria != 0)
+                {
+                    consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.Precio, M.Descripcion Marca, C.Descripcion Categoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria WHERE IdMarca = "+marca+" AND IdCategoria = "+categoria+"";
+                }
+                else
+                {
+                    consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.Precio, M.Descripcion Marca, C.Descripcion Categoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria WHERE IdCategoria = "+categoria+"";
+                }
+
+                datos.setConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while(datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    List<Imagen> imagenes = new List<Imagen>();
+
+                    aux.IdArticulo = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    aux.Marca = new Marca();
+                    aux.Marca.IdMarca = (int)datos.Lector["IdMarca"];
+                    aux.Marca.Descripcion = datos.Lector["Marca"] != DBNull.Value ? (string)datos.Lector["Marca"] : "Sin marca";
+                    
+
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.IdCategoria = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.Descripcion = datos.Lector["Categoria"] != DBNull.Value ? (string)datos.Lector["Categoria"] : "Sin categoría";
+
+                    aux.Imagenes = imagen.getImagenesIdArticulo(aux.IdArticulo);
+
+                    lista.Add(aux);
+                }
+
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

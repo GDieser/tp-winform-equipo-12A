@@ -48,12 +48,22 @@ namespace TPWinForm_equipo_12A
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
-                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;  
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
 
 
                 //Aca deberiamos agregar imagen y consultar si es modificacion
+                if (!string.IsNullOrEmpty(txtUrlImagen.Text))
+                {
+                    if (articulo.Imagenes == null)
+                        articulo.Imagenes = new List<Imagen>();
 
-                if(articulo.IdArticulo != 0)
+                    Imagen imagen = new Imagen();
+                    imagen.ImagenUrl = txtUrlImagen.Text;
+
+                    articulo.Imagenes.Add(imagen);
+                }
+
+                if (articulo.IdArticulo != 0)
                 {
                     negocio.modificarArticulo(articulo);
                     MessageBox.Show("Articulo modificado.");
@@ -82,9 +92,14 @@ namespace TPWinForm_equipo_12A
             {
                 //Acá los deplegables
                 cbxMarca.DataSource = marca.listar();
-                cbxCategoria.DataSource = categoria.listar();
+                cbxMarca.ValueMember = "IdMarca";
+                cbxMarca.DisplayMember = "Descripcion";
 
-                if(articulo != null)
+                cbxCategoria.DataSource = categoria.listar();
+                cbxCategoria.ValueMember = "IdCategoria";
+                cbxCategoria.DisplayMember = "Descripcion";
+
+                if (articulo != null)
                 {
                     txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
@@ -92,6 +107,12 @@ namespace TPWinForm_equipo_12A
                     txtPrecio.Text = articulo.Precio.ToString();
 
                     //Aca deberian ir cat, marca y url
+                    txtUrlImagen.Text = articulo.UrlImagen;
+                    txtUrlImagen.ReadOnly = true;
+                    cargarImagen(articulo.UrlImagen);
+                    cbxCategoria.SelectedValue = articulo.Categoria.IdCategoria;
+                    cbxMarca.SelectedValue = articulo.Marca.IdMarca;
+
                 }
 
             }
