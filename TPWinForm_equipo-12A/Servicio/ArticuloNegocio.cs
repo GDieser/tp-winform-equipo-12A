@@ -90,7 +90,9 @@ namespace Servicio
 
             try
             {
-                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values ('" + nuevoArt.Codigo + "', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion + "',  " + nuevoArt.Precio + ") ");
+                datos.setConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) values ('" + nuevoArt.Codigo + "', '" + nuevoArt.Nombre + "', '" + nuevoArt.Descripcion + "',  " + nuevoArt.Precio + ", @IdMarca, @IdCategoria) ");
+                datos.setearParametro("@IdMarca", nuevoArt.Marca.IdMarca);
+                datos.setParametro("@IdCategoria", nuevoArt.Categoria.IdCategoria);
 
                 datos.ejecutarAccion();
             }

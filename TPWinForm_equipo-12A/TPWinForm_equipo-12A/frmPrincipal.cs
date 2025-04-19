@@ -141,9 +141,9 @@ namespace TPWinForm_equipo_12A
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmAltaArticulo alta = new frmAltaArticulo();
+          /*  frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
-            cargarArticulos();
+            cargarArticulos();*/
         }
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -195,6 +195,13 @@ namespace TPWinForm_equipo_12A
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
+            cargarArticulos();
         }
     }
 }

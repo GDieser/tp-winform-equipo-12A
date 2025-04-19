@@ -47,6 +47,9 @@ namespace TPWinForm_equipo_12A
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
+                articulo.Marca = (Marca)cbxMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;  
+
 
                 //Aca deberiamos agregar imagen y consultar si es modificacion
 
@@ -78,7 +81,8 @@ namespace TPWinForm_equipo_12A
             try
             {
                 //Acá los deplegables
-                
+                cbxMarca.DataSource = marca.listar();
+                cbxCategoria.DataSource = categoria.listar();
 
                 if(articulo != null)
                 {
