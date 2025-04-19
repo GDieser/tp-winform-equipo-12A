@@ -108,13 +108,24 @@ namespace TPWinForm_equipo_12A
             try
             {
                 //Para el pb de imagenes
+                pboxAltaArticulo.Load(imagen);
             }
             catch (Exception ex)
             {
                 //Carga por defecto
-                //"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDSS5FeaLtelZwa1H2RbgdzrnuUt_oJEP0XA&s"
+                pboxAltaArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDSS5FeaLtelZwa1H2RbgdzrnuUt_oJEP0XA&s");
             }
 
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
         }
     }
 }
