@@ -124,8 +124,8 @@ namespace Servicio
         {
             AccesoDatos datos = new AccesoDatos();
 
-            //string consulta = "UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, Precio = @precio WHERE Id = @id";
-            string consulta = "UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, Precio = @precio WHERE Id = @id";
+            string consulta = "UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, Precio = @precio WHERE Id = @id";
+            //string consulta = "UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, Precio = @precio WHERE Id = @id";
 
             try
             {
@@ -133,8 +133,8 @@ namespace Servicio
                 datos.setParametro("@codigo", articulo.Codigo);
                 datos.setParametro("@nombre", articulo.Nombre);
                 datos.setParametro("@descripcion", articulo.Descripcion);
-                //datos.setParametro("@idMarca", articulo.Marca.IdMarca);
-                //datos.setParametro("@idCategoria", articulo.Categoria.IdCategoria);
+                datos.setParametro("@idMarca", articulo.Marca.IdMarca);
+                datos.setParametro("@idCategoria", articulo.Categoria.IdCategoria);
                 datos.setParametro("@precio", articulo.Precio);
                 datos.setParametro("@id", articulo.IdArticulo);
 
@@ -156,12 +156,12 @@ namespace Servicio
             AccesoDatos datos = new AccesoDatos();
 
             string consulta = "DELETE FROM ARTICULOS WHERE Id = @id";
-            //string eliminarImg = "DELETE FROM IMAGENES WHERE IdArticulo = @idArticulo";
+            string eliminarImg = "DELETE FROM IMAGENES WHERE IdArticulo = @idArticulo";
             try
             {
-                //datos.setConsulta(eliminarImg);
-                //datos.setParametro("@idArticulo", idArticulo);
-                //datos.ejecutarAccion();
+                datos.setConsulta(eliminarImg);
+                datos.setParametro("@idArticulo", idArticulo);
+                datos.ejecutarAccion();
                 datos.cerrarConexion();
 
                 datos.setConsulta(consulta);

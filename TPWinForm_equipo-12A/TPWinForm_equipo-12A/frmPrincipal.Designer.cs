@@ -143,13 +143,13 @@
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(129, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             // 
             // detalleTS
             // 
             this.detalleTS.Name = "detalleTS";
-            this.detalleTS.Size = new System.Drawing.Size(180, 22);
+            this.detalleTS.Size = new System.Drawing.Size(129, 22);
             this.detalleTS.Text = "Ver Detalle";
             this.detalleTS.Click += new System.EventHandler(this.detalleTS_Click);
             // 
@@ -301,10 +301,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(575, 321);
+            this.btnModificar.Location = new System.Drawing.Point(553, 329);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(79, 27);
+            this.btnModificar.Size = new System.Drawing.Size(101, 35);
             this.btnModificar.TabIndex = 14;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -312,10 +312,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(575, 366);
+            this.btnEliminar.Location = new System.Drawing.Point(553, 387);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(79, 27);
+            this.btnEliminar.Size = new System.Drawing.Size(101, 35);
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -323,10 +323,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(418, 321);
+            this.btnAgregar.Location = new System.Drawing.Point(418, 329);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(79, 27);
+            this.btnAgregar.Size = new System.Drawing.Size(101, 35);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -345,10 +345,10 @@
             // 
             // btnVerDetalles
             // 
-            this.btnVerDetalles.Location = new System.Drawing.Point(418, 363);
+            this.btnVerDetalles.Location = new System.Drawing.Point(418, 387);
             this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnVerDetalles.Name = "btnVerDetalles";
-            this.btnVerDetalles.Size = new System.Drawing.Size(79, 27);
+            this.btnVerDetalles.Size = new System.Drawing.Size(101, 35);
             this.btnVerDetalles.TabIndex = 18;
             this.btnVerDetalles.Text = "Ver Detalles";
             this.btnVerDetalles.UseVisualStyleBackColor = true;
