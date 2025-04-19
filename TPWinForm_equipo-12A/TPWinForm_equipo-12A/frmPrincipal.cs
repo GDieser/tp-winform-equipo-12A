@@ -159,6 +159,5 @@ namespace TPWinForm_equipo_12A
                 }
             }
         }
-
     }
 }

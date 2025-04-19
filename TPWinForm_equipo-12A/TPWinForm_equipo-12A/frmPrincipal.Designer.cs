@@ -54,6 +54,7 @@
             this.comboMarca = new System.Windows.Forms.ComboBox();
             this.comboCat = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -292,11 +293,21 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(82, 537);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(400, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "NOTA: Para ver detalle haga soble click sobre el articulo";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 709);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.comboCat);
             this.Controls.Add(this.comboMarca);
@@ -354,5 +365,6 @@
         private System.Windows.Forms.ComboBox comboMarca;
         private System.Windows.Forms.ComboBox comboCat;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label3;
     }
 }
