@@ -50,6 +50,7 @@ namespace TPWinForm_equipo_12A
 
         private void mostrarImagen()
         {
+
             if (imagenSel != null && !string.IsNullOrWhiteSpace(imagenSel.ImagenUrl))
             {
                 try
@@ -91,13 +92,19 @@ namespace TPWinForm_equipo_12A
 
             try
             {
+                imagenSel = dgvImagenes.CurrentRow.DataBoundItem as Imagen;
+
                 if (imagenSel != null)
                 {
                     imagenNegocio.borrarImagen(imagenSel.IdImagen);
                     imagenes.Remove(imagenSel);
+                    MessageBox.Show("Imagen borrada correctamente");
+                    cargarListaIm();
+                }else
+                {
+                    MessageBox.Show("Sin seleccion");
                 }
-                MessageBox.Show("Imagen borrada correctamente");
-                cargarListaIm();
+
             }
             catch (Exception)
             {
@@ -109,6 +116,8 @@ namespace TPWinForm_equipo_12A
         {
             try
             {
+                imagenSel = dgvImagenes.CurrentRow.DataBoundItem as Imagen;
+
                 if (imagenSel != null)
                 {
                     imagenSel.ImagenUrl = txtUrl.Text;
