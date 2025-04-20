@@ -167,13 +167,6 @@ namespace TPWinForm_equipo_12A
             }
         }
 
-        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            frmAltaArticulo alta = new frmAltaArticulo();
-            alta.ShowDialog();
-            cargarArticulos();
-        }
-
         private void abrirFormularioDetalle()
         {
             if (articuloSeleccionado != null) 
@@ -238,6 +231,35 @@ namespace TPWinForm_equipo_12A
         private void btnVerDetalles_Click(object sender, EventArgs e)
         {
             abrirFormularioDetalle();
+        }
+
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            btnAgregar_Click(sender, e);
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            btnModificar_Click(sender, e);
+        }
+
+        private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            btnEliminar_Click(sender, e);
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion(true);
+            nuevo.ShowDialog();
+            cargarArticulos();
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion();
+            nuevo.ShowDialog();
+            cargarArticulos();
         }
     }
 }

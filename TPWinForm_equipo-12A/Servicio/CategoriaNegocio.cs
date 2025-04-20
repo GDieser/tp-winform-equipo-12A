@@ -44,6 +44,84 @@ namespace Servicio
                 datos.cerrarConexion();
             }
         }
+
+        public void agregarCategoria(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "INSERT INTO CATEGORIAS(Descripcion) VALUES (@descripcion)";
+
+            try
+            {
+                datos.setConsulta(consulta);
+
+                datos.setParametro("@descripcion", categoria.Descripcion);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void modificarCategoria(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "UPDATE CATEGORIAS SET Descripcion = @descripcion WHERE Id = @id";
+
+            try
+            {
+                datos.setConsulta(consulta);
+
+                datos.setParametro("@descripcion", categoria.IdCategoria);
+                datos.setParametro("@id", categoria.IdCategoria);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminarCategoria(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "DELETE FROM CATEGORIAS WHERE Id = @id";
+
+            try
+            {
+                datos.setConsulta(consulta);
+                datos.setParametro("@id", categoria.IdCategoria);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
+
 }
+
+
 

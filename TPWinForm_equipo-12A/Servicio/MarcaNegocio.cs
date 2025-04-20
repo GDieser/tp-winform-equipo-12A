@@ -43,6 +43,82 @@ namespace Servicio
             {
                 datos.cerrarConexion();
             }
+
+        }
+
+        public void agregarMarca(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "INSERT INTO MARCAS(Descripcion) VALUES (@descripcion)";
+
+            try
+            {
+                datos.setConsulta(consulta);
+
+                datos.setParametro("@descripcion", marca.Descripcion);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void modificarMarca(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "UPDATE MARCAS SET Descripcion = @descripcion WHERE Id = @id";
+
+            try
+            {
+                datos.setConsulta(consulta);
+
+                datos.setParametro("@descripcion", marca.Descripcion);
+                datos.setParametro("@id", marca.IdMarca);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminarMarca(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta = "DELETE FROM MARCAS WHERE Id = @id";
+
+            try
+            {
+                datos.setConsulta(consulta);
+                datos.setParametro("@id", marca.IdMarca);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }
