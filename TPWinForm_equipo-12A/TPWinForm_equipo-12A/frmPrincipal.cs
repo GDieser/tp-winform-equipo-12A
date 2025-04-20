@@ -263,6 +263,7 @@ namespace TPWinForm_equipo_12A
         {
             frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion(true);
             nuevo.ShowDialog();
+            cargarCategorias();
             cargarArticulos();
         }
 
@@ -270,6 +271,7 @@ namespace TPWinForm_equipo_12A
         {
             frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion();
             nuevo.ShowDialog();
+            cargarMarcas();
             cargarArticulos();
         }
 
@@ -335,6 +337,7 @@ namespace TPWinForm_equipo_12A
         {
             frmAdmiMarcaDescripcion categoria = new frmAdmiMarcaDescripcion(false);
             categoria.ShowDialog();
+            cargarCategorias();
 
         }
 
@@ -342,6 +345,8 @@ namespace TPWinForm_equipo_12A
         {
             frmAdmiMarcaDescripcion marca = new frmAdmiMarcaDescripcion();
             marca.ShowDialog();
+            cargarMarcas();
+
         }
     }
 }
