@@ -243,5 +243,105 @@ namespace Servicio
             }
         }
 
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            ImagenNegocio imagen = new ImagenNegocio();
+
+            try
+            {
+                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria WHERE ";
+
+                if(campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Empieza con":
+                            consulta += "A.Nombre LIKE '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "A.Nombre LIKE '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "A.Nombre LIKE '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if(campo == "Marca")
+                {
+                    switch (criterio)
+                    {
+                        case "Empieza con":
+                            consulta += "M.Descripcion LIKE '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "M.Descripcion LIKE '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "M.Descripcion LIKE '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else
+                {
+                    consulta += "A.Codigo LIKE '%" + filtro + "%'";
+                }
+
+                datos.setConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo art = new Articulo();
+                    Categoria cat = new Categoria();
+                    Marca marca = new Marca();
+                    List<Imagen> imagenes = new List<Imagen>();
+
+                    art.IdArticulo = (int)datos.Lector["Id"];
+                    art.Codigo = (string)datos.Lector["Codigo"];
+                    art.Nombre = (string)datos.Lector["Nombre"];
+                    art.Descripcion = (string)datos.Lector["Descripcion"];
+                    art.Precio = (decimal)datos.Lector["Precio"];
+
+                    art.Categoria = new Categoria();
+                    if (datos.Lector["IdCategoria"] != DBNull.Value)
+                    {
+                        art.Categoria.IdCategoria = (int)datos.Lector["IdCategoria"];
+                    }   
+                    else
+                    {
+                        art.Categoria.IdCategoria = 0;
+                    }
+                    art.Categoria.Descripcion = datos.Lector["Categoria"] != DBNull.Value ? datos.Lector["Categoria"].ToString() : "Sin categoría";
+
+                    art.Marca = new Marca();
+                    if (datos.Lector["IdMarca"] != DBNull.Value)
+                    {
+                        art.Marca.IdMarca = (int)datos.Lector["IdMarca"];
+                    }
+                    else
+                    {
+                        art.Marca.IdMarca = 0;
+                    }
+                    art.Marca.Descripcion = datos.Lector["Marca"] != DBNull.Value ? datos.Lector["Marca"].ToString() : "Sin marca";
+                    art.Imagenes = imagen.getImagenesIdArticulo(art.IdArticulo);
+
+                    lista.Add(art);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

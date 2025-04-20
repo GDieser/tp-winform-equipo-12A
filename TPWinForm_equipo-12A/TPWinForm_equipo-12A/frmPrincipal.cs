@@ -21,6 +21,16 @@ namespace TPWinForm_equipo_12A
             cargarCategorias();
         }
 
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            if (cbxCampo.Items.Count == 0)
+            {
+                cbxCampo.Items.Add("Nombre");
+                cbxCampo.Items.Add("Marca");
+                cbxCampo.Items.Add("Código");
+            }
+        }
+
         private void cargarArticulos()
         {
             ArticuloNegocio art = new ArticuloNegocio();
@@ -260,6 +270,64 @@ namespace TPWinForm_equipo_12A
             frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion();
             nuevo.ShowDialog();
             cargarArticulos();
+        }
+
+        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxCriterio.Items.Clear();
+            string opcion = cbxCampo.SelectedItem.ToString();
+
+            if(opcion != "Código")
+            {
+                cbxCriterio.Items.Add("Empieza con");
+                cbxCriterio.Items.Add("Termina con");
+                cbxCriterio.Items.Add("Contiene");
+            }
+            else
+            {
+                cbxCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private bool validarFiltro()
+        {
+            if (cbxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Campos requeridos.");
+                return true;
+            }
+            if (cbxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Campos requeridos.");
+                return true;
+            }
+
+            return false;
+        }
+
+        private void btnAgregarAvanzado_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                if (validarFiltro())
+                {
+                    return;
+                }
+
+                string campo = cbxCampo.SelectedItem.ToString();
+                string criterio = cbxCriterio.SelectedItem.ToString();
+                string filtro = txtBoxBuscar.Text;
+
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
