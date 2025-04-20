@@ -32,10 +32,12 @@ namespace TPWinForm_equipo_12A
 
         private void cargarListaIm()
         {
+            dgvImagenes.DataSource = null;
             dgvImagenes.DataSource = imagenes;
             dgvImagenes.Columns["idArticulo"].Visible = false;
-            dgvImagenes.Columns["idImagen"].Visible = false;      
+            dgvImagenes.Columns["idImagen"].Visible = false;
         }
+
 
         private void dgvImagenes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -74,8 +76,8 @@ namespace TPWinForm_equipo_12A
             {
                 imagenNegocio.agregarImagen(im);
                 imagenes.Add(im);
-                cargarListaIm();
                 MessageBox.Show("Imagen agregada correctamente");
+                cargarListaIm();
             }
             catch (Exception)
             {
@@ -93,9 +95,9 @@ namespace TPWinForm_equipo_12A
                 {
                     imagenNegocio.borrarImagen(imagenSel.IdImagen);
                     imagenes.Remove(imagenSel);
-                    cargarListaIm();
                 }
                 MessageBox.Show("Imagen borrada correctamente");
+                cargarListaIm();
             }
             catch (Exception)
             {
@@ -111,10 +113,11 @@ namespace TPWinForm_equipo_12A
                 {
                     imagenSel.ImagenUrl = txtUrl.Text;
                     imagenNegocio.editarImagen(imagenSel);
-                    cargarListaIm();
                     mostrarImagen();
                     MessageBox.Show("Imagen editada correctamente");
+                    
                 }
+                cargarListaIm();
             }
             catch (Exception)
             {
