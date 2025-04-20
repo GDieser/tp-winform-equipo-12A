@@ -55,6 +55,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblNombre.Location = new System.Drawing.Point(85, 22);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
@@ -65,7 +66,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblMarca.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblMarca.Location = new System.Drawing.Point(93, 53);
             this.lblMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMarca.Name = "lblMarca";
@@ -76,7 +77,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCategoria.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblCategoria.Location = new System.Drawing.Point(76, 88);
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoria.Name = "lblCategoria";
@@ -87,7 +88,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblDescripcion.Location = new System.Drawing.Point(67, 121);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -98,7 +99,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblCodigo.Location = new System.Drawing.Point(89, 179);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigo.Name = "lblCodigo";
@@ -109,7 +110,7 @@
             // lblImagenes
             // 
             this.lblImagenes.AutoSize = true;
-            this.lblImagenes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblImagenes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblImagenes.Location = new System.Drawing.Point(23, 227);
             this.lblImagenes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblImagenes.Name = "lblImagenes";
@@ -120,7 +121,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblPrecio.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblPrecio.Location = new System.Drawing.Point(89, 205);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecio.Name = "lblPrecio";
@@ -130,6 +131,7 @@
             // 
             // tbNombre
             // 
+            this.tbNombre.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbNombre.Location = new System.Drawing.Point(166, 20);
             this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombre.Name = "tbNombre";
@@ -138,6 +140,7 @@
             // 
             // tbDescripcion
             // 
+            this.tbDescripcion.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbDescripcion.Location = new System.Drawing.Point(166, 119);
             this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescripcion.Multiline = true;
@@ -147,6 +150,7 @@
             // 
             // tbCodigo
             // 
+            this.tbCodigo.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbCodigo.Location = new System.Drawing.Point(166, 177);
             this.tbCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.tbCodigo.Name = "tbCodigo";
@@ -155,6 +159,7 @@
             // 
             // tbPrecio
             // 
+            this.tbPrecio.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbPrecio.Location = new System.Drawing.Point(166, 203);
             this.tbPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrecio.Name = "tbPrecio";
@@ -174,28 +179,33 @@
             // 
             // btnImagPrevia
             // 
+            this.btnImagPrevia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnImagPrevia.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnImagPrevia.Location = new System.Drawing.Point(141, 229);
             this.btnImagPrevia.Margin = new System.Windows.Forms.Padding(2);
             this.btnImagPrevia.Name = "btnImagPrevia";
             this.btnImagPrevia.Size = new System.Drawing.Size(21, 196);
             this.btnImagPrevia.TabIndex = 12;
             this.btnImagPrevia.Text = "<";
-            this.btnImagPrevia.UseVisualStyleBackColor = true;
+            this.btnImagPrevia.UseVisualStyleBackColor = false;
             this.btnImagPrevia.Click += new System.EventHandler(this.btnImagPrevia_Click);
             // 
             // btnImagSig
             // 
+            this.btnImagSig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnImagSig.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnImagSig.Location = new System.Drawing.Point(355, 229);
             this.btnImagSig.Margin = new System.Windows.Forms.Padding(2);
             this.btnImagSig.Name = "btnImagSig";
             this.btnImagSig.Size = new System.Drawing.Size(21, 196);
             this.btnImagSig.TabIndex = 13;
             this.btnImagSig.Text = ">";
-            this.btnImagSig.UseVisualStyleBackColor = true;
+            this.btnImagSig.UseVisualStyleBackColor = false;
             this.btnImagSig.Click += new System.EventHandler(this.btnImagSig_Click);
             // 
             // cbMarca
             // 
+            this.cbMarca.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(166, 51);
@@ -206,6 +216,7 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(166, 86);
@@ -216,63 +227,74 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditar.Location = new System.Drawing.Point(26, 320);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 32);
             this.btnEditar.TabIndex = 16;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(142)))), ((int)(((byte)(121)))));
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAceptar.Location = new System.Drawing.Point(26, 356);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(101, 32);
             this.btnAceptar.TabIndex = 17;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(76)))), ((int)(((byte)(87)))));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Location = new System.Drawing.Point(26, 393);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(101, 32);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnImagenes
             // 
+            this.btnImagenes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnImagenes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnImagenes.Location = new System.Drawing.Point(26, 283);
             this.btnImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.btnImagenes.Name = "btnImagenes";
             this.btnImagenes.Size = new System.Drawing.Size(101, 32);
             this.btnImagenes.TabIndex = 19;
             this.btnImagenes.Text = "Imagenes";
-            this.btnImagenes.UseVisualStyleBackColor = true;
+            this.btnImagenes.UseVisualStyleBackColor = false;
             this.btnImagenes.Click += new System.EventHandler(this.btnImagenes_Click);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(129, 451);
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCerrar.Location = new System.Drawing.Point(154, 452);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(147, 32);
             this.btnCerrar.TabIndex = 20;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
             this.ClientSize = new System.Drawing.Size(417, 504);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnImagenes);

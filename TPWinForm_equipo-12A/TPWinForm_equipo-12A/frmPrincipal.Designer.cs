@@ -72,8 +72,10 @@
             this.dgvArticulos.AllowUserToOrderColumns = true;
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvArticulos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(220)))));
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvArticulos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(220)))));
             this.dgvArticulos.Location = new System.Drawing.Point(7, 63);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvArticulos.MultiSelect = false;
@@ -98,28 +100,33 @@
             // 
             // btnImagenPrevia
             // 
+            this.btnImagenPrevia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnImagenPrevia.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnImagenPrevia.Location = new System.Drawing.Point(418, 278);
             this.btnImagenPrevia.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnImagenPrevia.Name = "btnImagenPrevia";
             this.btnImagenPrevia.Size = new System.Drawing.Size(79, 23);
             this.btnImagenPrevia.TabIndex = 4;
             this.btnImagenPrevia.Text = "Anterior";
-            this.btnImagenPrevia.UseVisualStyleBackColor = true;
+            this.btnImagenPrevia.UseVisualStyleBackColor = false;
             this.btnImagenPrevia.Click += new System.EventHandler(this.btnImagenPrevia_Click);
             // 
             // btnImagenSiguiente
             // 
+            this.btnImagenSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnImagenSiguiente.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnImagenSiguiente.Location = new System.Drawing.Point(575, 279);
             this.btnImagenSiguiente.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnImagenSiguiente.Name = "btnImagenSiguiente";
             this.btnImagenSiguiente.Size = new System.Drawing.Size(79, 22);
             this.btnImagenSiguiente.TabIndex = 5;
             this.btnImagenSiguiente.Text = "Siguiente";
-            this.btnImagenSiguiente.UseVisualStyleBackColor = true;
+            this.btnImagenSiguiente.UseVisualStyleBackColor = false;
             this.btnImagenSiguiente.Click += new System.EventHandler(this.btnImagenSiguiente_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(177)))), ((int)(((byte)(220)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -183,14 +190,14 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // tsmModificarCategoria
             // 
             this.tsmModificarCategoria.Name = "tsmModificarCategoria";
-            this.tsmModificarCategoria.Size = new System.Drawing.Size(180, 22);
+            this.tsmModificarCategoria.Size = new System.Drawing.Size(125, 22);
             this.tsmModificarCategoria.Text = "Modificar";
             this.tsmModificarCategoria.Click += new System.EventHandler(this.tsmModificarCategoria_Click);
             // 
@@ -220,6 +227,7 @@
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
+            this.lblBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblBuscar.Location = new System.Drawing.Point(11, 429);
             this.lblBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscar.Name = "lblBuscar";
@@ -229,6 +237,7 @@
             // 
             // txtBoxBuscar
             // 
+            this.txtBoxBuscar.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtBoxBuscar.Location = new System.Drawing.Point(57, 427);
             this.txtBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtBoxBuscar.Name = "txtBoxBuscar";
@@ -238,6 +247,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(4, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -248,6 +258,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(143, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -277,72 +288,85 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnModificar.Location = new System.Drawing.Point(553, 329);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(101, 35);
             this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(76)))), ((int)(((byte)(87)))));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEliminar.Location = new System.Drawing.Point(553, 387);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(101, 35);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(142)))), ((int)(((byte)(121)))));
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregar.Location = new System.Drawing.Point(418, 329);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(101, 35);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnBuscarMarca
             // 
+            this.btnBuscarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnBuscarMarca.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscarMarca.Location = new System.Drawing.Point(286, 31);
             this.btnBuscarMarca.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnBuscarMarca.Name = "btnBuscarMarca";
             this.btnBuscarMarca.Size = new System.Drawing.Size(79, 21);
             this.btnBuscarMarca.TabIndex = 3;
             this.btnBuscarMarca.Text = "Buscar";
-            this.btnBuscarMarca.UseVisualStyleBackColor = true;
+            this.btnBuscarMarca.UseVisualStyleBackColor = false;
             this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click);
             // 
             // btnVerDetalles
             // 
+            this.btnVerDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnVerDetalles.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnVerDetalles.Location = new System.Drawing.Point(418, 387);
             this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnVerDetalles.Name = "btnVerDetalles";
             this.btnVerDetalles.Size = new System.Drawing.Size(101, 35);
             this.btnVerDetalles.TabIndex = 8;
             this.btnVerDetalles.Text = "Ver Detalles";
-            this.btnVerDetalles.UseVisualStyleBackColor = true;
+            this.btnVerDetalles.UseVisualStyleBackColor = false;
             this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
             // 
             // btnAgregarAvanzado
             // 
+            this.btnAgregarAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(102)))));
+            this.btnAgregarAvanzado.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregarAvanzado.Location = new System.Drawing.Point(203, 422);
             this.btnAgregarAvanzado.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregarAvanzado.Name = "btnAgregarAvanzado";
             this.btnAgregarAvanzado.Size = new System.Drawing.Size(86, 28);
             this.btnAgregarAvanzado.TabIndex = 13;
             this.btnAgregarAvanzado.Text = "Buscar";
-            this.btnAgregarAvanzado.UseVisualStyleBackColor = true;
+            this.btnAgregarAvanzado.UseVisualStyleBackColor = false;
             this.btnAgregarAvanzado.Click += new System.EventHandler(this.btnAgregarAvanzado_Click);
             // 
             // cbxCriterio
             // 
+            this.cbxCriterio.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCriterio.FormattingEnabled = true;
             this.cbxCriterio.Location = new System.Drawing.Point(246, 395);
@@ -353,6 +377,7 @@
             // 
             // cbxCampo
             // 
+            this.cbxCampo.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCampo.FormattingEnabled = true;
             this.cbxCampo.Location = new System.Drawing.Point(57, 395);
@@ -365,6 +390,7 @@
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
+            this.lblCriterio.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblCriterio.Location = new System.Drawing.Point(200, 398);
             this.lblCriterio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCriterio.Name = "lblCriterio";
@@ -375,6 +401,7 @@
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
+            this.lblCampo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblCampo.Location = new System.Drawing.Point(13, 398);
             this.lblCampo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCampo.Name = "lblCampo";
@@ -386,6 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(115)))), ((int)(((byte)(143)))));
             this.ClientSize = new System.Drawing.Size(667, 467);
             this.Controls.Add(this.cbxCriterio);
             this.Controls.Add(this.cbxCampo);

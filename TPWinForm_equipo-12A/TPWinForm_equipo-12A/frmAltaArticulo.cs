@@ -94,6 +94,7 @@ namespace TPWinForm_equipo_12A
             try
             {
                 //Acá los deplegables
+                
                 cbxMarca.DataSource = marca.listar();
                 cbxMarca.ValueMember = "IdMarca";
                 cbxMarca.DisplayMember = "Descripcion";
