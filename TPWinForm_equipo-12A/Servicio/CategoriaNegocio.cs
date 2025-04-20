@@ -80,7 +80,7 @@ namespace Servicio
             {
                 datos.setConsulta(consulta);
 
-                datos.setParametro("@descripcion", categoria.IdCategoria);
+                datos.setParametro("@descripcion", categoria.Descripcion);
                 datos.setParametro("@id", categoria.IdCategoria);
                 datos.ejecutarAccion();
 
@@ -96,7 +96,7 @@ namespace Servicio
             }
         }
 
-        public void eliminarCategoria(Categoria categoria)
+        public void eliminarCategoria(int categoria)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -105,7 +105,7 @@ namespace Servicio
             try
             {
                 datos.setConsulta(consulta);
-                datos.setParametro("@id", categoria.IdCategoria);
+                datos.setParametro("@id", categoria);
                 datos.ejecutarAccion();
 
             }

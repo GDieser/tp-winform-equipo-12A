@@ -40,16 +40,10 @@
             this.detalleTS = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acaLaListaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acaLaListaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModificarCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.acaLaListaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.acaLaListaDeMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModificarMarca = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBoxBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -108,7 +102,7 @@
             this.btnImagenPrevia.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnImagenPrevia.Name = "btnImagenPrevia";
             this.btnImagenPrevia.Size = new System.Drawing.Size(79, 23);
-            this.btnImagenPrevia.TabIndex = 2;
+            this.btnImagenPrevia.TabIndex = 4;
             this.btnImagenPrevia.Text = "Anterior";
             this.btnImagenPrevia.UseVisualStyleBackColor = true;
             this.btnImagenPrevia.Click += new System.EventHandler(this.btnImagenPrevia_Click);
@@ -119,7 +113,7 @@
             this.btnImagenSiguiente.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnImagenSiguiente.Name = "btnImagenSiguiente";
             this.btnImagenSiguiente.Size = new System.Drawing.Size(79, 22);
-            this.btnImagenSiguiente.TabIndex = 3;
+            this.btnImagenSiguiente.TabIndex = 5;
             this.btnImagenSiguiente.Text = "Siguiente";
             this.btnImagenSiguiente.UseVisualStyleBackColor = true;
             this.btnImagenSiguiente.Click += new System.EventHandler(this.btnImagenSiguiente_Click);
@@ -135,7 +129,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.menuStrip1.Size = new System.Drawing.Size(667, 24);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
@@ -181,8 +175,7 @@
             // 
             this.categoriasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem,
-            this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.tsmModificarCategoria});
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
             this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(75, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
@@ -190,44 +183,22 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
-            // modificarToolStripMenuItem
+            // tsmModificarCategoria
             // 
-            this.modificarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acaLaListaToolStripMenuItem});
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar";
-            // 
-            // acaLaListaToolStripMenuItem
-            // 
-            this.acaLaListaToolStripMenuItem.Name = "acaLaListaToolStripMenuItem";
-            this.acaLaListaToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.acaLaListaToolStripMenuItem.Text = "Aca la lista";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acaLaListaToolStripMenuItem1});
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            // 
-            // acaLaListaToolStripMenuItem1
-            // 
-            this.acaLaListaToolStripMenuItem1.Name = "acaLaListaToolStripMenuItem1";
-            this.acaLaListaToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
-            this.acaLaListaToolStripMenuItem1.Text = "aca la lista";
+            this.tsmModificarCategoria.Name = "tsmModificarCategoria";
+            this.tsmModificarCategoria.Size = new System.Drawing.Size(180, 22);
+            this.tsmModificarCategoria.Text = "Modificar";
+            this.tsmModificarCategoria.Click += new System.EventHandler(this.tsmModificarCategoria_Click);
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem1,
-            this.modificarToolStripMenuItem1,
-            this.eliminarToolStripMenuItem1});
+            this.tsmModificarMarca});
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
             this.marcasToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
@@ -235,37 +206,16 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
-            // modificarToolStripMenuItem1
+            // tsmModificarMarca
             // 
-            this.modificarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acaLaListaToolStripMenuItem2});
-            this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.modificarToolStripMenuItem1.Text = "Modificar";
-            // 
-            // acaLaListaToolStripMenuItem2
-            // 
-            this.acaLaListaToolStripMenuItem2.Name = "acaLaListaToolStripMenuItem2";
-            this.acaLaListaToolStripMenuItem2.Size = new System.Drawing.Size(128, 22);
-            this.acaLaListaToolStripMenuItem2.Text = "aca la lista";
-            // 
-            // eliminarToolStripMenuItem1
-            // 
-            this.eliminarToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acaLaListaDeMarcasToolStripMenuItem});
-            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.eliminarToolStripMenuItem1.Text = "Eliminar";
-            // 
-            // acaLaListaDeMarcasToolStripMenuItem
-            // 
-            this.acaLaListaDeMarcasToolStripMenuItem.Name = "acaLaListaDeMarcasToolStripMenuItem";
-            this.acaLaListaDeMarcasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.acaLaListaDeMarcasToolStripMenuItem.Text = "Aca la lista de Marcas";
+            this.tsmModificarMarca.Name = "tsmModificarMarca";
+            this.tsmModificarMarca.Size = new System.Drawing.Size(180, 22);
+            this.tsmModificarMarca.Text = "Modificar";
+            this.tsmModificarMarca.Click += new System.EventHandler(this.tsmModificarMarca_Click);
             // 
             // lblBuscar
             // 
@@ -283,7 +233,7 @@
             this.txtBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtBoxBuscar.Name = "txtBoxBuscar";
             this.txtBoxBuscar.Size = new System.Drawing.Size(131, 20);
-            this.txtBoxBuscar.TabIndex = 6;
+            this.txtBoxBuscar.TabIndex = 12;
             // 
             // label1
             // 
@@ -313,7 +263,7 @@
             this.comboMarca.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.comboMarca.Name = "comboMarca";
             this.comboMarca.Size = new System.Drawing.Size(91, 21);
-            this.comboMarca.TabIndex = 11;
+            this.comboMarca.TabIndex = 1;
             // 
             // comboCat
             // 
@@ -323,7 +273,7 @@
             this.comboCat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.comboCat.Name = "comboCat";
             this.comboCat.Size = new System.Drawing.Size(97, 21);
-            this.comboCat.TabIndex = 12;
+            this.comboCat.TabIndex = 2;
             // 
             // btnModificar
             // 
@@ -331,7 +281,7 @@
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(101, 35);
-            this.btnModificar.TabIndex = 14;
+            this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -342,7 +292,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(101, 35);
-            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -353,7 +303,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(101, 35);
-            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -364,7 +314,7 @@
             this.btnBuscarMarca.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnBuscarMarca.Name = "btnBuscarMarca";
             this.btnBuscarMarca.Size = new System.Drawing.Size(79, 21);
-            this.btnBuscarMarca.TabIndex = 17;
+            this.btnBuscarMarca.TabIndex = 3;
             this.btnBuscarMarca.Text = "Buscar";
             this.btnBuscarMarca.UseVisualStyleBackColor = true;
             this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click);
@@ -375,7 +325,7 @@
             this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnVerDetalles.Name = "btnVerDetalles";
             this.btnVerDetalles.Size = new System.Drawing.Size(101, 35);
-            this.btnVerDetalles.TabIndex = 18;
+            this.btnVerDetalles.TabIndex = 8;
             this.btnVerDetalles.Text = "Ver Detalles";
             this.btnVerDetalles.UseVisualStyleBackColor = true;
             this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
@@ -386,7 +336,7 @@
             this.btnAgregarAvanzado.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregarAvanzado.Name = "btnAgregarAvanzado";
             this.btnAgregarAvanzado.Size = new System.Drawing.Size(86, 28);
-            this.btnAgregarAvanzado.TabIndex = 19;
+            this.btnAgregarAvanzado.TabIndex = 13;
             this.btnAgregarAvanzado.Text = "Buscar";
             this.btnAgregarAvanzado.UseVisualStyleBackColor = true;
             this.btnAgregarAvanzado.Click += new System.EventHandler(this.btnAgregarAvanzado_Click);
@@ -399,7 +349,7 @@
             this.cbxCriterio.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(122, 21);
-            this.cbxCriterio.TabIndex = 23;
+            this.cbxCriterio.TabIndex = 11;
             // 
             // cbxCampo
             // 
@@ -409,7 +359,7 @@
             this.cbxCampo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbxCampo.Name = "cbxCampo";
             this.cbxCampo.Size = new System.Drawing.Size(123, 21);
-            this.cbxCampo.TabIndex = 22;
+            this.cbxCampo.TabIndex = 10;
             this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
             // 
             // lblCriterio
@@ -502,14 +452,8 @@
         private System.Windows.Forms.Button btnVerDetalles;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acaLaListaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acaLaListaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem acaLaListaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem acaLaListaDeMarcasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmModificarCategoria;
+        private System.Windows.Forms.ToolStripMenuItem tsmModificarMarca;
         private System.Windows.Forms.Button btnAgregarAvanzado;
         private System.Windows.Forms.ComboBox cbxCriterio;
         private System.Windows.Forms.ComboBox cbxCampo;

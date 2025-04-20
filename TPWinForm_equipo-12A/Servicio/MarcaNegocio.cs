@@ -97,7 +97,7 @@ namespace Servicio
             }
         }
 
-        public void eliminarMarca(Marca marca)
+        public void eliminarMarca(int marca)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -106,7 +106,7 @@ namespace Servicio
             try
             {
                 datos.setConsulta(consulta);
-                datos.setParametro("@id", marca.IdMarca);
+                datos.setParametro("@id", marca);
                 datos.ejecutarAccion();
 
             }

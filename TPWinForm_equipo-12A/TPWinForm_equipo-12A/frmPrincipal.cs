@@ -329,5 +329,18 @@ namespace TPWinForm_equipo_12A
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void tsmModificarCategoria_Click(object sender, EventArgs e)
+        {
+            frmAdmiMarcaDescripcion categoria = new frmAdmiMarcaDescripcion(false);
+            categoria.ShowDialog();
+
+        }
+
+        private void tsmModificarMarca_Click(object sender, EventArgs e)
+        {
+            frmAdmiMarcaDescripcion marca = new frmAdmiMarcaDescripcion();
+            marca.ShowDialog();
+        }
     }
 }
