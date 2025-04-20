@@ -40,7 +40,10 @@ namespace TPWinForm_equipo_12A
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                if(articulo == null)
+                if (!validarIngresos())
+                    return;
+
+                if (articulo == null)
                     articulo = new Articulo();
 
                 articulo.Codigo = txtCodigo.Text;
@@ -148,5 +151,47 @@ namespace TPWinForm_equipo_12A
         {
             cargarImagen(txtUrlImagen.Text);
         }
+
+        private bool validarIngresos()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
+                MessageBox.Show("Codigo es obligatorio.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Nombre es obligatorio.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                MessageBox.Show("Descripcion es obligatorio.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                MessageBox.Show("Precio es obligatorio.");
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPrecio.Text, out _))
+            {
+                MessageBox.Show("Debe ingresar un precio valido (solo numeros).");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtUrlImagen.Text))
+            {
+                MessageBox.Show("Debe ingresar una URL de imagen.");
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
