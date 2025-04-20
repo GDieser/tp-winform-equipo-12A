@@ -20,6 +20,10 @@ namespace TPWinForm_equipo_12A
         public frmImagenes(int idArt)
         {
             InitializeComponent();
+
+            btnAgregar.Enabled = false;
+            btnActualizar.Enabled = false;
+
             imagenNegocio = new ImagenNegocio();
             imagenes = imagenNegocio.getImagenesIdArticulo(idArt);
             if (imagenes.Count > 0)
@@ -132,6 +136,15 @@ namespace TPWinForm_equipo_12A
             {
                 MessageBox.Show("Error al modificar la imagen");
             }
+        }
+
+        private void txtUrl_TextChanged(object sender, EventArgs e)
+        {
+            //Para que no me sobreescriba los datos tan facil 
+            bool habilitar = !string.IsNullOrWhiteSpace(txtUrl.Text);
+
+            btnAgregar.Enabled = habilitar;
+            btnActualizar.Enabled = habilitar;
         }
     }
 

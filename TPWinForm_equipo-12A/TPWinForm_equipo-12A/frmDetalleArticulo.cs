@@ -22,7 +22,7 @@ namespace TPWinForm_equipo_12A
             this.art = art;
         }
 
-     
+
         private void frmDetalleArticulo_Load(object sender, EventArgs e)
         {
             cargaInicial();
@@ -133,6 +133,31 @@ namespace TPWinForm_equipo_12A
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            if (!validar())
+            {
+                return;
+            }
+            if (!cambios())
+            {
+                MessageBox.Show("Sin cambios.", "Sin cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+            
+            art.Nombre = tbNombre.Text;
+            art.Codigo = tbCodigo.Text;
+            art.Descripcion = tbDescripcion.Text;
+            art.Precio = decimal.Parse(tbPrecio.Text);
+            art.Marca = (Marca)cbMarca.SelectedItem;
+            art.Categoria = (Categoria)cbCategoria.SelectedItem;
+
+            negocio.modificarArticulo(art);
+            MessageBox.Show("Artículo actualizado", "Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cambiarEstado();
+            btnAceptar.Enabled = false;
 
         }
 
@@ -152,9 +177,63 @@ namespace TPWinForm_equipo_12A
         private void btnImagenes_Click(object sender, EventArgs e)
         {
             frmImagenes frmImagenes = new frmImagenes(art.IdArticulo);
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
             frmImagenes.ShowDialog();
+
+            
+            art.Imagenes = imagenNegocio.getImagenesIdArticulo(art.IdArticulo);
+            imagenActual = 0;
+            mostrarImagen();
+
+            btnImagPrevia.Visible = art.Imagenes.Count > 1;
+            btnImagSig.Visible = art.Imagenes.Count > 1;
+        }
+
+        private bool validar()
+        {
+            if (string.IsNullOrWhiteSpace(tbNombre.Text) || string.IsNullOrWhiteSpace(tbCodigo.Text) ||
+                string.IsNullOrWhiteSpace(tbDescripcion.Text) || string.IsNullOrWhiteSpace(tbPrecio.Text) ||
+                cbMarca.SelectedItem == null || cbCategoria.SelectedItem == null)
+            {
+                MessageBox.Show("Campos obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!decimal.TryParse(tbPrecio.Text, out _))
+            {
+                MessageBox.Show("El precio debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+        private bool cambios()
+        {
+            if (art.Nombre != tbNombre.Text)
+                return true;
+            if (art.Codigo != tbCodigo.Text)
+                return true;
+            if (art.Descripcion != tbDescripcion.Text)
+                return true;
+            if (art.Precio != decimal.Parse(tbPrecio.Text))
+                return true;
+
+            Marca marcaSeleccionada = (Marca)cbMarca.SelectedItem;
+            Categoria categoriaSeleccionada = (Categoria)cbCategoria.SelectedItem;
+
+            if (art.Marca == null || art.Marca.IdMarca != marcaSeleccionada.IdMarca)
+                return true;
+            if (art.Categoria == null || art.Categoria.IdCategoria != categoriaSeleccionada.IdCategoria)
+                return true;
+
+            return false;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
-
 
 }

@@ -48,6 +48,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnImagenes = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +131,7 @@
             // tbNombre
             // 
             this.tbNombre.Location = new System.Drawing.Point(166, 20);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(186, 20);
             this.tbNombre.TabIndex = 7;
@@ -138,7 +139,7 @@
             // tbDescripcion
             // 
             this.tbDescripcion.Location = new System.Drawing.Point(166, 119);
-            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(186, 49);
@@ -147,7 +148,7 @@
             // tbCodigo
             // 
             this.tbCodigo.Location = new System.Drawing.Point(166, 177);
-            this.tbCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(186, 20);
             this.tbCodigo.TabIndex = 9;
@@ -155,7 +156,7 @@
             // tbPrecio
             // 
             this.tbPrecio.Location = new System.Drawing.Point(166, 203);
-            this.tbPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Size = new System.Drawing.Size(186, 20);
             this.tbPrecio.TabIndex = 10;
@@ -163,7 +164,7 @@
             // pbImagenes
             // 
             this.pbImagenes.Location = new System.Drawing.Point(166, 229);
-            this.pbImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagenes.Name = "pbImagenes";
             this.pbImagenes.Size = new System.Drawing.Size(185, 196);
             this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -174,7 +175,7 @@
             // btnImagPrevia
             // 
             this.btnImagPrevia.Location = new System.Drawing.Point(141, 229);
-            this.btnImagPrevia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnImagPrevia.Margin = new System.Windows.Forms.Padding(2);
             this.btnImagPrevia.Name = "btnImagPrevia";
             this.btnImagPrevia.Size = new System.Drawing.Size(21, 196);
             this.btnImagPrevia.TabIndex = 12;
@@ -185,7 +186,7 @@
             // btnImagSig
             // 
             this.btnImagSig.Location = new System.Drawing.Point(355, 229);
-            this.btnImagSig.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnImagSig.Margin = new System.Windows.Forms.Padding(2);
             this.btnImagSig.Name = "btnImagSig";
             this.btnImagSig.Size = new System.Drawing.Size(21, 196);
             this.btnImagSig.TabIndex = 13;
@@ -195,18 +196,20 @@
             // 
             // cbMarca
             // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(166, 51);
-            this.cbMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(186, 21);
             this.cbMarca.TabIndex = 14;
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(166, 86);
-            this.cbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(186, 21);
             this.cbCategoria.TabIndex = 15;
@@ -214,7 +217,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(26, 320);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 32);
             this.btnEditar.TabIndex = 16;
@@ -225,7 +228,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(26, 356);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(101, 32);
             this.btnAceptar.TabIndex = 17;
@@ -236,7 +239,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(26, 393);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(101, 32);
             this.btnCancelar.TabIndex = 18;
@@ -247,7 +250,7 @@
             // btnImagenes
             // 
             this.btnImagenes.Location = new System.Drawing.Point(26, 283);
-            this.btnImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.btnImagenes.Name = "btnImagenes";
             this.btnImagenes.Size = new System.Drawing.Size(101, 32);
             this.btnImagenes.TabIndex = 19;
@@ -255,11 +258,23 @@
             this.btnImagenes.UseVisualStyleBackColor = true;
             this.btnImagenes.Click += new System.EventHandler(this.btnImagenes_Click);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(129, 451);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(147, 32);
+            this.btnCerrar.TabIndex = 20;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frmDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 552);
+            this.ClientSize = new System.Drawing.Size(417, 504);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnImagenes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -281,10 +296,11 @@
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(433, 543);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(422, 566);
+            this.MinimumSize = new System.Drawing.Size(433, 512);
             this.Name = "frmDetalleArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle Articulo";
@@ -317,5 +333,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnImagenes;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

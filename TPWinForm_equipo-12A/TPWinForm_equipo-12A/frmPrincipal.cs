@@ -241,6 +241,7 @@ namespace TPWinForm_equipo_12A
         private void btnVerDetalles_Click(object sender, EventArgs e)
         {
             abrirFormularioDetalle();
+            cargarArticulos();
         }
 
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)

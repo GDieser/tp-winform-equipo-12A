@@ -34,6 +34,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pbImagenes = new System.Windows.Forms.PictureBox();
             this.txtUrl = new System.Windows.Forms.TextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImagenes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.SuspendLayout();
@@ -44,21 +45,21 @@
             this.dgvImagenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImagenes.Location = new System.Drawing.Point(18, 25);
-            this.dgvImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvImagenes.MultiSelect = false;
             this.dgvImagenes.Name = "dgvImagenes";
             this.dgvImagenes.ReadOnly = true;
             this.dgvImagenes.RowHeadersWidth = 62;
             this.dgvImagenes.RowTemplate.Height = 28;
             this.dgvImagenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImagenes.Size = new System.Drawing.Size(191, 232);
+            this.dgvImagenes.Size = new System.Drawing.Size(191, 192);
             this.dgvImagenes.TabIndex = 0;
             this.dgvImagenes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImagenes_CellContentClick);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(231, 25);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(242, 215);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 31);
             this.btnAgregar.TabIndex = 1;
@@ -68,8 +69,8 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(231, 68);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(242, 170);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 31);
             this.btnEliminar.TabIndex = 2;
@@ -79,8 +80,8 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(231, 114);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Location = new System.Drawing.Point(242, 255);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(86, 31);
             this.btnActualizar.TabIndex = 3;
@@ -90,36 +91,49 @@
             // 
             // pbImagenes
             // 
-            this.pbImagenes.Location = new System.Drawing.Point(231, 158);
-            this.pbImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagenes.Location = new System.Drawing.Point(222, 25);
+            this.pbImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagenes.Name = "pbImagenes";
-            this.pbImagenes.Size = new System.Drawing.Size(86, 99);
+            this.pbImagenes.Size = new System.Drawing.Size(130, 129);
             this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagenes.TabIndex = 4;
             this.pbImagenes.TabStop = false;
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(18, 261);
-            this.txtUrl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUrl.Location = new System.Drawing.Point(81, 252);
+            this.txtUrl.Margin = new System.Windows.Forms.Padding(2);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(192, 20);
+            this.txtUrl.Size = new System.Drawing.Size(140, 20);
             this.txtUrl.TabIndex = 5;
+            this.txtUrl.TextChanged += new System.EventHandler(this.txtUrl_TextChanged);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(7, 255);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(70, 13);
+            this.lblTitulo.TabIndex = 6;
+            this.lblTitulo.Text = "URL Imagen:";
             // 
             // frmImagenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 292);
+            this.ClientSize = new System.Drawing.Size(363, 310);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.pbImagenes);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvImagenes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(379, 349);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(379, 349);
             this.Name = "frmImagenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Listado Imagenes";
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.PictureBox pbImagenes;
         private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
