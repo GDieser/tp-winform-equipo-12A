@@ -194,5 +194,26 @@ namespace TPWinForm_equipo_12A
             return true;
         }
 
+        private void btnMasMarca_Click(object sender, EventArgs e)
+        {
+            frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion();
+            nuevo.ShowDialog();
+            MarcaNegocio marca = new MarcaNegocio();
+            cbxMarca.DataSource = marca.listar();
+        }
+
+        private void btnMasCategoria_Click(object sender, EventArgs e)
+        {
+            frmAltaMarcaDescripcion nuevo = new frmAltaMarcaDescripcion(true);
+            nuevo.ShowDialog();
+            CategoriaNegocio categoria = new CategoriaNegocio();
+            cbxCategoria.DataSource = categoria.listar();
+
+        }
+
+        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
