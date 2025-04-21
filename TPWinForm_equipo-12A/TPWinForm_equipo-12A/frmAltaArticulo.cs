@@ -200,6 +200,7 @@ namespace TPWinForm_equipo_12A
             nuevo.ShowDialog();
             MarcaNegocio marca = new MarcaNegocio();
             cbxMarca.DataSource = marca.listar();
+        
         }
 
         private void btnMasCategoria_Click(object sender, EventArgs e)

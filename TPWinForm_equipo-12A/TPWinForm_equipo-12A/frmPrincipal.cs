@@ -208,6 +208,8 @@ namespace TPWinForm_equipo_12A
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
             cargarArticulos();
+            cargarMarcas();
+            cargarCategorias();
         }
 
         private void btnBuscarMarca_Click(object sender, EventArgs e)
@@ -346,6 +348,11 @@ namespace TPWinForm_equipo_12A
             frmAdmiMarcaDescripcion marca = new frmAdmiMarcaDescripcion();
             marca.ShowDialog();
             cargarMarcas();
+
+        }
+
+        private void comboMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
