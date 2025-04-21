@@ -183,7 +183,7 @@ namespace TPWinForm_equipo_12A
             { 
                 frmDetalleArticulo modificar = new frmDetalleArticulo(articuloSeleccionado);
                 modificar.ShowDialog();
-///                cargarArticulos();
+                cargarArticulos();
             }
         }
 

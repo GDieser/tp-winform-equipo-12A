@@ -343,5 +343,59 @@ namespace Servicio
             }
         }
 
+        public Articulo getArticulo(int id)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            Articulo art = new Articulo();
+            ImagenNegocio im = new ImagenNegocio();
+            try
+            {
+                datos.setConsulta("select a.id, a.Codigo, a.Descripcion, a.Nombre, a.Precio, m.Id as \"IdMarca\", m.Descripcion as \"marca\", c.Id as \"IdCategoria\", c.Descripcion as \"categoria\" from ARTICULOS a left join MARCAS m ON m.Id = a.IdMarca left join CATEGORIAS c ON c.Id = a.IdCategoria where a.id=@id");
+                datos.setParametro("@id", id);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    art.IdArticulo = (int)datos.Lector["Id"];
+                    art.Codigo = (string)datos.Lector["Codigo"];
+                    art.Nombre = (string)datos.Lector["Nombre"];
+                    art.Descripcion = (string)datos.Lector["Descripcion"];
+                    art.Precio = (decimal)datos.Lector["Precio"];
+                    art.Marca = new Marca();
+                    if (datos.Lector["IdMarca"] != DBNull.Value)
+                    {
+                        art.Marca.IdMarca = (int)datos.Lector["IdMarca"];
+                        art.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    else
+                    {
+                        art.Marca.IdMarca = 0;
+                        art.Marca.Descripcion = "Sin marca";
+                    }
+                    art.Categoria = new Categoria();
+                    if (datos.Lector["IdCategoria"] != DBNull.Value)
+                    {
+                        art.Categoria.IdCategoria = (int)datos.Lector["IdCategoria"];
+                        art.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    }
+                    else
+                    {
+                        art.Categoria.IdCategoria = 0;
+                        art.Categoria.Descripcion = "Sin categoría";
+                    }
+                    art.Imagenes = im.getImagenesIdArticulo(art.IdArticulo);
+                }
+                return art;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

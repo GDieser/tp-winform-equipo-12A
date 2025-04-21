@@ -16,6 +16,7 @@ namespace TPWinForm_equipo_12A
     {
         private Articulo art;
         private int imagenActual = 0;
+        ArticuloNegocio negServ = new ArticuloNegocio();
         public frmDetalleArticulo(Articulo art)
         {
             InitializeComponent();
@@ -185,7 +186,8 @@ namespace TPWinForm_equipo_12A
             art.Imagenes = imagenNegocio.getImagenesIdArticulo(art.IdArticulo);
             imagenActual = 0;
             mostrarImagen();
-
+            this.art = negServ.getArticulo(art.IdArticulo);
+            
             btnImagPrevia.Visible = art.Imagenes.Count > 1;
             btnImagSig.Visible = art.Imagenes.Count > 1;
         }
